@@ -1,0 +1,38 @@
+
+<div>
+    <div class="popupheader">
+        <div class="head_img">
+            <mat-icon  *ngIf="data.type == 'confirmation' " >done_outline</mat-icon>
+            <mat-icon  *ngIf="data.type == 'alert' ">warning</mat-icon>
+            <mat-icon  *ngIf="data.type == 'Nomineealert' ">warning</mat-icon>
+            <mat-icon  *ngIf="data.type == 'success' " >done_outline</mat-icon>
+            <mat-icon  *ngIf="data.type == 'generateRequest' " >warning</mat-icon>
+        </div>
+    </div>
+    <div class="popupBody">
+        <p *ngIf="data.type == 'confirmation' ">Confirm !</p>
+        <p *ngIf="data.type == 'alert' ">Alert !</p>
+        <p *ngIf="data.type == 'Nomineealert' ">Alert !</p>
+        <p *ngIf="data.type == 'success' ">Congratulations !</p>
+        <div>{{data.message}}</div>
+    </div>
+    <div class="popupFooter" mat-dialog-actions>
+        <div *ngIf="data.type == 'confirmation'">
+            <button mat-raised-button class=" btnRoundWhite ml-1" type="reset" (click)="confirm()">ok</button>
+            <!-- <button class="btn-danger" (click)="cancel()">Cancel</button> -->
+        </div>
+        <div *ngIf="data.type == 'alert' || data.type == 'success' ">
+            <!-- <button mat-raised-button class=" btnRoundWhite mx-4" (click)="cancel()">Cancel</button> -->
+            <button mat-raised-button class="btnRoundWhite mx-3" (click)="confirm()">Ok</button>
+            <button mat-raised-button class="btnRoundWhite mx-3" (click)="cancel()">Cancel</button>
+        </div>
+        <!-- <div *ngIf="data.type == 'Nomineealert'">
+            <button class="btn mar15" (click)="NomineeAlert()">Ok</button>
+        </div> -->
+        <div *ngIf="data.type == 'generateRequest'">
+            <button mat-raised-button class=" btnRoundWhite mx-4" (click)="cancel()">Cancel</button>
+            <button mat-raised-button class=" btnRoundWhite ml-1" (click)="confirm()">Ok</button>
+        </div>
+    </div>
+  </div>
+  

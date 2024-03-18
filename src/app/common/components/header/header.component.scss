@@ -1,0 +1,27 @@
+  .mat-icon {
+    color: var(--iconColor);
+    cursor: pointer;
+  }
+
+  .logo {
+      height: 33px;
+  }
+
+  .loginID {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0px;
+      color: #1E4679;
+      opacity: 1;
+      justify-content: end !important;
+  }
+
+  .logoutDiv {
+      display: flex;
+      align-items: flex-end;
+      cursor: pointer;
+  }
+  .shadow{
+    border-bottom: 1px solid #e9edf4;
+    -webkit-box-shadow: 0 2px 10px -1px rgba(8, 35, 171, 0.1);
+  }

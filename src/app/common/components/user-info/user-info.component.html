@@ -1,0 +1,30 @@
+<div class="container-fluid p-3 d-flex justify-content-center">
+
+  <mat-card class="example-container pt-0 w-75">
+    <div class="col-md-12 my-4 text-center">
+      <h2 class="headingColor">All User Details</h2>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z2">
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="name"> {{element.name || "-"}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="userName">
+        <mat-header-cell *matHeaderCellDef> User Name</mat-header-cell>
+        <mat-cell *matCellDef="let element" class="userName"> {{element.userName || "-"}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="password">
+        <mat-header-cell *matHeaderCellDef>Password </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="password"> {{element.password || "-"}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </table>
+    <mat-paginator #users [pageSize]="5" [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+  </mat-card>
+</div>

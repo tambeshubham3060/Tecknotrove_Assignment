@@ -1,0 +1,51 @@
+<div class="loginPage">
+  <div class="loginHead">
+    <img src="assets/photos/Primary-Logo-White-BG-crop2.webp" alt="logo-small" class=" logo">
+  </div>
+  <div class="bg">
+    <mat-card class="container logincard mt-3">
+      <h1 class="mt-1 headingColor"><b>Log In</b></h1>
+      <h5 class="headingColor"><b>Please Enter Details</b></h5>
+      <form class="" [formGroup]="loginForm">
+        <div class="formField ">
+          <div class="row">
+            <mat-form-field floatLabel="always" class="example-full-width">
+              <mat-label class="userName">User Name</mat-label>
+              <input matInput formControlName="userName" required
+                [ngClass]="{ 'is-invalid': loginFormControls['userName'].errors }" (keydown.enter)="onSubmit()"
+                autocomplete="off">
+              <mat-error>
+                <p class=""
+                  *ngIf="(loginFormControls['userName'].errors) || !loginFormControls['userName'].valid && loginFormControls['userName'].touched">
+                  Username is required </p>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="row mt-2">
+            <mat-form-field floatLabel="always">
+              <mat-label class="userName">Password</mat-label>
+              <input matInput type="password" formControlName="password" required
+                [ngClass]="{ 'is-invalid': loginFormControls['password'].errors }" (keydown.enter)="onSubmit()"
+                autocomplete="off">
+              <mat-error>
+                <p class=""
+                  *ngIf="(loginFormControls['password'].errors) || !loginFormControls['password'].valid && loginFormControls['password'].touched">
+                  Password is required </p>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="text-center mt-4">
+            <button mat-raised-button type="reset" class="btnRoundWhite mx-2">Reset</button>
+            <button mat-raised-button type="submit" class="btnRoundWhite mx-2" (click)="onSubmit()">Login</button>
+          </div>
+          <div class="text-center mt-5">
+            <h6 class="my-4">OR</h6>
+            <a type="submit" class=" mx-2" (click)="registration()">Register</a>
+          </div>
+        </div>
+      </form>
+
+    </mat-card>
+  </div>
+
+</div>

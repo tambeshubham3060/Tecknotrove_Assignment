@@ -1,0 +1,55 @@
+<div class="container-fluid h-100">
+    <div class="text-end">
+        <span class="closeIcon" (click)="close(null)"><mat-icon mat-dialog-close>cancel</mat-icon></span>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-12 mt-2 mb-5 text-center">
+            <h2 class="headingColor">Registration Form</h2>
+        </div>
+        <form class="px-4" [formGroup]="employeeForm">
+            <div class="row my-4">
+                <mat-form-field floatLabel="always" class="example-full-width">
+                    <mat-label class="name">Full Name</mat-label>
+                    <input matInput formControlName="name" required autocomplete="off">
+                    <mat-error>
+                        <p class=""
+                            *ngIf="( this.employeeFormControls['name'].errors) || !this.employeeFormControls['name'].valid && this.employeeFormControls['name'].touched">
+                            Name is required </p>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="row my-4">
+                <mat-form-field floatLabel="always" class="example-full-width">
+                    <mat-label class="userName">userName</mat-label>
+                    <input matInput formControlName="userName" required autocomplete="off">
+                    <mat-error>
+                        <p class=""
+                            *ngIf="( this.employeeFormControls['userName'].errors) || !this.employeeFormControls['userName'].valid && this.employeeFormControls['userName'].touched">
+                            User Name is required </p>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="row my-4">
+                <mat-form-field floatLabel="always" class="example-full-width">
+                    <mat-label class="password">Password</mat-label>
+                    <input matInput formControlName="password" required autocomplete="off">
+                    <mat-error>
+                        <p class=""
+                            *ngIf="( this.employeeFormControls['password'].errors) || !this.employeeFormControls['password'].valid && this.employeeFormControls['password'].touched">
+                            Password is required </p>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <!-- Add more form controls for other employee details (e.g., address, phone number, etc.) -->
+
+            <div class="col-md-12 mt-5 text-center sticky-bottom">
+                <button mat-raised-button class=" btnRoundWhite mx-2" type="submit"
+                    (click)="submitForm()">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+</div>
